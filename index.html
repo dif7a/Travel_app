@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="section1">
+        <nav class="navbar">
+            <div class="nav_title">
+                <p>Explore</p>
+                <p>Plan A Trip</p>
+                <p>Blog</p>
+                <p>Contact</p>
+            </div>
+            <button class="sign_btn">Sign Up</button>
+        </nav>
+        <div class="font_title">
+            <h1>Embrace the beauty of Norway</h1>
+            <button>Explore Now!</button>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="sec_title">
+            <img src="./arrow.png" alt="" class="aro">
+            <h3>Discover the touch of nature</h3>
+            <p>Norway is renowned for its stunning natural beauty and deep connection to the outdoors. Here’s a glimpse
+                into what makes Norway's nature so captivating.
+
+                Experiencing Norway's nature is like stepping into a grand, untamed gallery of natural wonders. Whether
+                you're exploring the dramatic fjords, chasing the Northern Lights, or simply taking a quiet moment in
+                the wilderness, the country offers a profound and invigorating connection to the natural world.
+            </p>
+            <button>Plan your trip</button>
+        </div>
+        <div class="sec_image">
+            <img src="./pexels-tobiasbjorkli-1940036.jpg" alt="image" class="img1 img">
+            <img src="./jarand-k-lokeland-3-MftKobVtg-unsplash.jpg" alt="image" class="img2 img">
+            <img src="./pexels-tobiasbjorkli-4976406.jpg" alt="image" class="img3 img">
+        </div>
+    </div>
+    <div class="section3">
+        <div class="card card1">
+            <h3>Oslo <br> A Journey Through Norway’s Capital of Culture and Nature</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card2">
+            <h3>Svalbard Island <br>Discover the Arctic’s Rugged Beauty and Remote Charm</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card3">
+            <h3>Tromsø <br>The Arctic Gateway to Northern Lights and Polar Adventures</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card4">
+            <h3>Lofoten <br> Where Rugged Mountains Meet Idyllic Coastal Wonders</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card5">
+            <h3>Norway’s Majestic Mountains and Serene Valleys: Nature’s Masterpieces Await</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+    <footer>Made by Diya &#128151</footer>
+    <script>
+        let slidIndx = 1;
+        showDiv(slidIndx);
+        function plusDiv(n) {
+            showDiv(slidIndx += n);
+        }
+        function showDiv(n) {
+            var x = document.getElementsByClassName('card');
+            var i;
+            if (n > x.length) {
+                slidIndx = 1;
+            }
+            if (n < 1) {
+                slidIndx = x.length;
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slidIndx - 1].style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
