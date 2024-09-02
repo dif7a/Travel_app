@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400px;
+            font-style: normal;
+        }
+
+        .navbar {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+            font-size: 19px;
+            padding: 20px 40px;
+            color: white;
+        }
+
+        .nav_title {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .nav_title p {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .nav_title p::after {
+            content: '';
+            display: block;
+            height: 2.5px;
+            width: 0;
+            position: relative;
+            top: 3px;
+            background: transparent;
+            transition: width .7s ease, background-color .7s ease;
+        }
+
+        .nav_title p.active::after {
+            width: 100%;
+            background-color: white;
+        }
+
+        .nav_title p:hover::after {
+            width: 100%;
+            background-color: white;
+        }
+
+        .navbar>button {
+            font-size: 16px;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 18px;
+            width: 6em;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            background: linear-gradient(black, black) padding-box, linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%) border-box;
+            border-radius: 20px;
+            border: 2px solid transparent;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100vh;
+            background-image: url("./main.jpg");
+            background-size: cover;
+            z-index: -1;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .font_title {
+            font-size: 2.7pc;
+            position: absolute;
+            bottom: 2em;
+            color: whitesmoke;
+        }
+
+        .font_title>h1 {
+            text-align: right;
+            width: 60%;
+            margin: 50px;
+            float: right;
+            padding-right: 20px;
+        }
+
+        .font_title>button {
+            width: 8em;
+            position: absolute;
+            bottom: -3em;
+            left: 3em;
+        }
+
+        .section2 {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            margin: 0em 2em 5em 2em;
+            height: 70vh;
+        }
+
+        .aro {
+            background: transparent;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            bottom: -9.3em;
+            float: left;
+        }
+
+        .sec_title {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 0px 40px;
+            text-align: left;
+        }
+
+        .sec_title>h3 {
+            position: relative;
+            top: 1.5em;
+            left: 0;
+            font-size: 2.5em;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 400px;
+            font-style: normal;
+        }
+        .sec_title > p {
+            position: relative;
+            top: 3.2em;
+            padding-top: 10px;
+            font-size: 18px;
+        }
+
+        .sec_title>button {
+            position: relative;
+            top: 4.7em;
+            width: 8em;
+            font-size: 15px;
+        }
+
+        .sec_image {
+            width: 50%;
+            position: relative;
+        }
+
+        .img {
+            display: block;
+            top: 0px;
+            position: relative;
+            max-width: 262px;
+            border-radius: 20px;
+            text-decoration: none;
+            overflow: hidden;
+            margin: 10px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #f2f8f9;
+            animation: animate;
+        }
+
+        .img1 {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 0;
+
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+                top: -4px;
+                border: 1px solid #cccccc;
+                background-color: white;
+                z-index: 3;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                background: #00838d;
+                height: 50px;
+                width: 50px;
+                transform: scale(2);
+                transform-origin: 50% 50%;
+                transition: transform 0.15s ease-out;
+            }
+
+            &:hover:before {
+                transform: scale(2.15);
+            }
+        }
+
+        .img2 {
+            position: absolute;
+            top: 50px;
+            right: 200px;
+            z-index: 1;
+
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+                top: 40px;
+                border: 1px solid #cccccc;
+                background-color: white;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                background: #00838d;
+                height: 50px;
+                width: 50px;
+                transform: scale(2);
+                transform-origin: 50% 50%;
+                transition: transform 0.15s ease-out;
+            }
+
+            &:hover:before {
+                transform: scale(2.15);
+            }
+        }
+
+        .img3 {
+            position: absolute;
+            top: 120px;
+            right: 10px;
+
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+                top: 110px;
+                border: 1px solid #cccccc;
+                background-color: white;
+                z-index: 3;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -2;
+                background: #00838d;
+                height: 50px;
+                width: 50px;
+                transform: scale(2);
+                transform-origin: 50% 50%;
+                transition: transform 0.15s ease-out;
+            }
+
+            &:hover:before {
+                transform: scale(2.15);
+            }
+        }
+
+        .section3 {
+            width: 75%;
+            height: 65vh;
+            margin: 70px auto;
+            border-radius: 40px;
+            box-shadow: 0px 10px 15px 5px grey;
+            transition: all .75s ease-out;
+            position: relative;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            border-radius: 40px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 5em;
+            color: white;
+        }
+
+        .card>button {
+            margin: 20px 0px;
+            width: 3.5em;
+            font-size: 16px;
+            position: absolute;
+            bottom: 2em;
+            right: 2em;
+        }
+
+        .card4 {
+            background-image: url("./callum-stewart-loTNrJY7TP0-unsplash.jpg");
+        }
+
+        .card4>h3 {
+            color: white;
+            width: 45%;
+            position: absolute;
+            bottom: 2.5em;
+            font-size: 2em;
+            text-align: left;
+        }
+
+        .card2 {
+            background-image: url("./svalbard.jpg");
+        }
+
+        .card2>h3 {
+            color: white;
+            width: 50%;
+            font-size: 2em;
+            position: absolute;
+            top: 4em;
+        }
+
+        .card3 {
+            background-image: url("./pexels-therato-9941412.jpg");
+        }
+
+        .card3>h3 {
+            color: #cbf3f0;
+            width: 45%;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .card5 {
+            background-image: url("./pexels-tobiasbjorkli-2340159.jpg");
+        }
+
+        .card1>h3 {
+            color: #ffbe0b;
+            width: 40%;
+            position: absolute;
+            top: 4em;
+            right: 1.5em;
+            font-size: 2.3em;
+            float: right;
+            text-align: right;
+        }
+
+        .card1 {
+            background-image: url("./pexels-ela-yudhanira-1570636-3019893.jpg");
+        }
+
+        .card5>h3 {
+            width: 45%;
+            font-size: 2em;
+            position: absolute;
+            bottom: 3.5em;
+            right: 1em;
+            text-align: right;
+        }
+
+        footer {
+            margin-top: 5em;
+            padding: 20px 0px;
+            text-align: center;
+            background-color: lavender;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section1">
+        <nav class="navbar">
+            <div class="nav_title">
+                <p>Explore</p>
+                <p>Plan A Trip</p>
+                <p>Blog</p>
+                <p>Contact</p>
+            </div>
+            <button class="sign_btn">Sign Up</button>
+        </nav>
+        <div class="font_title">
+            <h1>Embrace the beauty of Norway</h1>
+            <button>Explore Now!</button>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="sec_title">
+            <img src="./arrow.png" alt="" class="aro">
+            <h3>Discover the touch of nature</h3>
+            <p>Norway is renowned for its stunning natural beauty and deep connection to the outdoors. Here’s a glimpse
+                into what makes Norway's nature so captivating.
+
+                Experiencing Norway's nature is like stepping into a grand, untamed gallery of natural wonders. Whether
+                you're exploring the dramatic fjords, chasing the Northern Lights, or simply taking a quiet moment in
+                the wilderness, the country offers a profound and invigorating connection to the natural world.
+            </p>
+            <button>Plan your trip</button>
+        </div>
+        <div class="sec_image">
+            <img src="./pexels-tobiasbjorkli-1940036.jpg" alt="image" class="img1 img">
+            <img src="./jarand-k-lokeland-3-MftKobVtg-unsplash.jpg" alt="image" class="img2 img">
+            <img src="./pexels-tobiasbjorkli-4976406.jpg" alt="image" class="img3 img">
+        </div>
+    </div>
+    <div class="section3">
+        <div class="card card1">
+            <h3>Oslo <br> A Journey Through Norway’s Capital of Culture and Nature</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card2">
+            <h3>Svalbard Island <br>Discover the Arctic’s Rugged Beauty and Remote Charm</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card3">
+            <h3>Tromsø <br>The Arctic Gateway to Northern Lights and Polar Adventures</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card4">
+            <h3>Lofoten <br> Where Rugged Mountains Meet Idyllic Coastal Wonders</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+        <div class="card card5">
+            <h3>Norway’s Majestic Mountains and Serene Valleys: Nature’s Masterpieces Await</h3>
+            <button class="aro_btn" onclick="plusDiv(1)"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+    <footer>Made by Diya &#128151</footer>
+    <script>
+        let slidIndx = 1;
+        showDiv(slidIndx);
+        function plusDiv(n) {
+            showDiv(slidIndx += n);
+        }
+        function showDiv(n) {
+            var x = document.getElementsByClassName('card');
+            var i;
+            if (n > x.length) {
+                slidIndx = 1;
+            }
+            if (n < 1) {
+                slidIndx = x.length;
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slidIndx - 1].style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
